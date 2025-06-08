@@ -1,0 +1,34 @@
+# 🍕 Responsive Pizza Website  
+
+A fully responsive pizza ordering website built with **HTML, CSS, and JavaScript**, featuring dynamic animations, a
+mobile-friendly menu, and interactive product displays powered by **Swiper.js** and **ScrollReveal**.    
+
+---
+
+## 🚀 Key Features  
+- **Swiper-Powered Carousel**: Smooth, touch-enabled slides for popular pizzas using `swiper-bundle.min.js` 
++ `swiper-bundle.min.css`.  
+- **ScrollReveal Animations**: Staggered element reveals on scroll.  
+- **Mobile-First Navigation**: Toggleable menu with CSS transitions.  
+- **Dynamic Product Cards**: Hover effects and price display.  
+- **Sticky Header**: Shadow effect on scroll via JavaScript.  
+
+---
+
+## 🛠️ Technologies & Libraries  
+### **Core**  
+- **HTML5**: Semantic structure (`<section>`, `<article>`).  
+- **CSS3**: Flexbox, Grid, Variables (`:root`), `@media` queries.  
+- **JavaScript**: DOM manipulation, event listeners.  
+
+### **Libraries**  
+| Library | Purpose | Files Used |  
+|---------|---------|------------|  
+| [Swiper.js](https://swiperjs.com/) | Carousel for popular pizzas | `swiper-bundle.min.js`, `swiper-bundle.min.css`  
+| [ScrollReveal](https://scrollrevealjs.org/) | Animate elements on scroll | `scrollreveal.min.js` |  
+| [RemixIcon](https://remixicon.com/) | Icons (menu, cart, etc.) | CDN link |  
+
+### **Fonts**  
+- **Google Fonts**: `Montserrat` (body), `Carter One` (titles).  
+
+---

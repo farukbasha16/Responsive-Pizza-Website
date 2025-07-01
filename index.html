@@ -46,6 +46,10 @@
                     <li>
                         <a href="#contact" class="nav__link">Contact</a>
                     </li>
+                    <li class="nav__cart">
+                        <a href="#" class="nav__link"><i class="ri-shopping-cart-2-fill"></i>
+                        <span class="cart__count">0</span></a>
+                    </li>
                     </ul>
     
                     <!-- Close button -->
@@ -61,18 +65,100 @@
             </nav>
       </header>
 
+  <!-- Shopping Cart Sidebar -->
+  <div class="cart" id="cart">
+    <div class="cart__header">
+      <h3>Your Order</h3>
+      <button class="cart__close" id="cart-close">
+        <i class="ri-close-line"></i>
+      </button>
+    </div>
+    
+    <div class="cart__body">
+      <div class="cart__empty">
+        <i class="ri-shopping-cart-line"></i>
+        <p>Your cart is empty</p>
+      </div>
+    </div>
+    
+    <div class="cart__footer">
+      <div class="cart__total">
+        <span>Total:</span>
+        <span class="cart__total-price">$0.00</span>
+      </div>
+      <button class="button cart__checkout" id="checkout-btn">Checkout</button>
+    </div>
+  </div>
+
+  <!-- Checkout Modal -->
+  <div class="checkout-modal" id="checkout-modal">
+    <div class="checkout__content">
+      <button class="checkout__close" id="checkout-close">
+        <i class="ri-close-line"></i>
+      </button>
+      
+      <h2 class="checkout__title">Complete Your Order</h2>
+      
+      <form id="checkout-form" class="checkout__form">
+        <div class="form__group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form__group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" required>
+        </div>
+        
+        <div class="form__group">
+          <label for="address">Delivery Address</label>
+          <textarea id="address" name="address" rows="3" required></textarea>
+        </div>
+        
+        <div class="form__group">
+          <label for="notes">Special Instructions</label>
+          <textarea id="notes" name="notes" rows="2"></textarea>
+        </div>
+        
+        <div class="checkout__summary">
+          <h3>Order Summary</h3>
+          <div id="order-summary"></div>
+          <div class="checkout__total">
+            <span>Total:</span>
+            <span id="checkout-total">$0.00</span>
+          </div>
+        </div>
+        
+        <button type="submit" class="button checkout__submit">Place Order</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Order Confirmation Modal -->
+  <div class="confirmation-modal" id="confirmation-modal">
+    <div class="confirmation__content">
+      <div class="confirmation__icon">
+        <i class="ri-checkbox-circle-fill"></i>
+      </div>
+      <h2 class="confirmation__title">Order Confirmed!</h2>
+      <p class="confirmation__message" id="confirmation-message"></p>
+      <button class="button confirmation__close" id="confirmation-close">Continue Shopping</button>
+    </div>
+  </div>
+
       <!--==================== MAIN ====================-->
       <main class="main">
          <!--==================== HOME ====================-->
          <section class="home section" id="home">
             <div class="home__container container grid">
                 <div class="home__data">
-                    <h1 class="home__title">Crispy And <br> Delicious Pizzas</h1>
+                    <h1 class="home__title">Crispy And <br> Delicious Pizzas<br> Crafted with Love</h1>
 
                     <p class="home__description">
                         Order the best pizzas to end your hunger
                         and make your family moments more
                         memorable, place your order now.
+                        Experience pizza perfection with every bite.
                     </p>
 
                     <a href="#products" class="button">Order Pizza Now</a>
@@ -105,7 +191,7 @@
                         The secret to success is the best ingredients 
                         to make a better pizza. Today we strive for 
                         perfection, just as we have been doing for 15 years 
-                        when we first opened the pizzeria in RK-Beach Vizag.
+                        when we first opened the pizzeria in RK-Beach - Vizag.
                     </p>
 
                     <a href="#popular" class="button">The Best Pizzas</a>
@@ -211,69 +297,93 @@
             </div>
          </section>
 
-         <!--==================== PRODUCTS ====================-->
-         <section class="products section" id="products">
-            <h2 class="section__title">The Most <br> Devoured Pizzas</h2>
+        <!-- Menu section -->
+        <section class="products section" id="products">
+            <div class="products__container container">
+                <div class="products__header">
+                    <h2 class="section__title">Choose Your <br> Favorite Pizza</h2>
+                    <div class="products__filter">
+                        <button class="filter__btn active" data-filter="all">All</button>
+                        <button class="filter__btn" data-filter="veg">Vegetarian</button>
+                        <button class="filter__btn" data-filter="meat">Meat Lovers</button>
+                        <button class="filter__btn" data-filter="premium">Premium</button>
+                    </div>
+                </div>
 
-            <div class="products__container container grid">
+                <div class="products__grid">
+                    <article class="products__card" data-category="veg">
+                        <img src="img/product-1.png" alt="Vegetarian" class="products__img">
+                        <div class="products__content">
+                            <h3 class="products__name">Garden Fresh</h3>
+                            <p class="products__desc">Bell peppers, onions, mushrooms, olives</p>
+                            <div class="products__footer">
+                                <span class="products__price">$13.99</span>
+                                <div class="products__actions">
+                                    <button class="products__button"><i class="ri-add-line"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
 
-               <article class="products__card">
-                    <img src="img/product-1.png" alt="image" class="products__img">
+                    <article class="products__card" data-category="meat">
+                        <img src="img/product-2.png" alt="Pepperoni" class="products__img">
+                        <div class="products__content">
+                            <h3 class="products__name">Meat Feast</h3>
+                            <p class="products__desc">Pepperoni, ham, sausage, bacon</p>
+                            <div class="products__footer">
+                                <span class="products__price">$15.99</span>
+                                <div class="products__actions">
+                                    <button class="products__button"><i class="ri-add-line"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
 
-                    <h3 class="products__name">Vegetarian <br> Pizza</h3>
-                    <span class="products__price">Rs.1199</span>
+                    <article class="products__card" data-category="premium">
+                        <div class="products__badge">Chef's Choice</div>
+                        <img src="img/product-3.png" alt="Margherita" class="products__img">
+                        <div class="products__content">
+                            <h3 class="products__name">Truffle Deluxe</h3>
+                            <p class="products__desc">Black truffle, wild mushrooms, burrata</p>
+                            <div class="products__footer">
+                                <span class="products__price">$18.99</span>
+                                <div class="products__actions">
+                                    <button class="products__button"><i class="ri-add-line"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
 
-                    <button class="products__button">
-                        <i class="ri-shopping-bag-3-fill"></i>
-                    </button>
-               </article>
+                    <article class="products__card" data-category="veg">
+                        <img src="img/product-4.png" alt="Mushroom" class="products__img">
+                        <div class="products__content">
+                            <h3 class="products__name">Mushroom Medley</h3>
+                            <p class="products__desc">Portobello, shiitake, oyster mushrooms</p>
+                            <div class="products__footer">
+                                <span class="products__price">$14.99</span>
+                                <div class="products__actions">
+                                    <button class="products__button"><i class="ri-add-line"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
 
-               <article class="products__card">
-                    <img src="img/product-2.png" alt="image" class="products__img">
-
-                    <h3 class="products__name">Pepperoni <br> Pizza</h3>
-                    <span class="products__price">Rs.799</span>
-
-                    <button class="products__button">
-                        <i class="ri-shopping-bag-3-fill"></i>
-                    </button>
-                </article>
-
-                <article class="products__card">
-                    <img src="img/product-3.png" alt="image" class="products__img">
-
-                    <h3 class="products__name">Margherita <br> Pizza</h3>
-                    <span class="products__price">Rs.959</span>
-
-                    <button class="products__button">
-                        <i class="ri-shopping-bag-3-fill"></i>
-                    </button>
-                </article>
-
-                <article class="products__card">
-                    <img src="img/product-4.png" alt="image" class="products__img">
-
-                    <h3 class="products__name">Mushroom <br> Pizza</h3>
-                    <span class="products__price">Rs.1569</span>
-
-                    <button class="products__button">
-                        <i class="ri-shopping-bag-3-fill"></i>
-                    </button>
-                </article>
-
-                <article class="products__card">
-                    <img src="img/product-5.png" alt="image" class="products__img">
-
-                    <h3 class="products__name">Italian <br> Pizza</h3>
-                    <span class="products__price">Rs.799</span>
-
-                    <button class="products__button">
-                        <i class="ri-shopping-bag-3-fill"></i>
-                    </button>
-                </article>
-       
+                    <article class="products__card" data-category="meat">
+                        <img src="img/product-5.png" alt="Italian" class="products__img">
+                        <div class="products__content">
+                            <h3 class="products__name">Italian Classic</h3>
+                            <p class="products__desc">Prosciutto, arugula, parmesan</p>
+                            <div class="products__footer">
+                                <span class="products__price">$16.99</span>
+                                <div class="products__actions">
+                                    <button class="products__button"><i class="ri-add-line"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
             </div>
-         </section>
+        </section>
 
          <!--==================== CONTACT ====================-->
          <section class="contact section" id="contact">
@@ -304,8 +414,8 @@
                             <h3 class="contact__title">Delivery</h3>
 
                             <address class="contact__address">
-                                +91-1234567890 <br>
-                                +11-123456
+                                +91-6123456789 <br>
+                                +10-345678
                             </address>
 
                         </div>
@@ -315,7 +425,7 @@
 
                             <address class="contact__address">
                                 RK-Beach Vizag <br>
-                                Av. Sun #4321
+                                Av. Sun #1234
                             </address>
 
                             <a href="#" target="_blank" class="contact__map">
@@ -389,7 +499,7 @@
          </div>
 
          <span class="footer__copy">
-            &#169; Pizzeria 2025. All rights reserved.
+            &#169; Pizzeria. All rights reserved.
          </span>
       </footer>
 

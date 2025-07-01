@@ -2,24 +2,9 @@
 
 A fully responsive pizza ordering website built with **HTML, CSS, and JavaScript**, featuring dynamic animations, a
 mobile-friendly menu, and interactive product displays powered by **Swiper.js** and **ScrollReveal**.    
+A fully responsive pizza ordering website with complete cart and checkout functionality.
 
----
-
-## 🚀 Key Features  
-- **Swiper-Powered Carousel**: Smooth, touch-enabled slides for popular pizzas using `swiper-bundle.min.js` 
-+ `swiper-bundle.min.css`.  
-- **ScrollReveal Animations**: Staggered element reveals on scroll.  
-- **Mobile-First Navigation**: Toggleable menu with CSS transitions.  
-- **Dynamic Product Cards**: Hover effects and price display.  
-- **Sticky Header**: Shadow effect on scroll via JavaScript.  
-
----
-
-## 🛠️ Technologies & Libraries  
-### **Core**  
-- **HTML5**: Semantic structure (`<section>`, `<article>`).  
-- **CSS3**: Flexbox, Grid, Variables (`:root`), `@media` queries.  
-- **JavaScript**: DOM manipulation, event listeners.  
+---  
 
 ### **Libraries**  
 | Library | Purpose | Files Used |  
@@ -32,3 +17,60 @@ mobile-friendly menu, and interactive product displays powered by **Swiper.js** 
 - **Google Fonts**: `Montserrat` (body), `Carter One` (titles).  
 
 ---
+
+A fully responsive pizza ordering website with complete cart and checkout functionality.
+
+## Features
+
+- **Responsive Design**: Works on all devices
+- **Interactive Menu**: Filter by category (Vegetarian, Meat, Premium)
+- **Shopping Cart**: Add/remove items, adjust quantities
+- **Checkout System**: Order form with validation
+- **Order Confirmation**: Detailed confirmation message
+- **Modern UI**: Attractive design with animations
+- **Swiper-Powered Carousel**: Smooth, touch-enabled slides for popular pizzas using `swiper-bundle.min.js` 
++ `swiper-bundle.min.css`.  
+- **ScrollReveal Animations**: Staggered element reveals on scroll.  
+- **Mobile-First Navigation**: Toggleable menu with CSS transitions.  
+- **Dynamic Product Cards**: Hover effects and price display.  
+- **Sticky Header**: Shadow effect on scroll via JavaScript.  
+
+---
+
+## Technologies
+
+- Swiper.js (for sliders)
+- ScrollReveal (for animations)
+- Remix Icon (for icons)
+- **HTML5**: Semantic structure (`<section>`, `<article>`).  
+- **CSS3**: Flexbox, Grid, Variables (`:root`), `@media` queries.  
+- **JavaScript**: DOM manipulation, event listeners. 
+
+## Color Scheme
+
+| Color          | Hex Code     |
+|----------------|-------------|
+| Primary Red    | #e74c3c     |
+| Dark Red       | #c0392b     |
+| Light Red      | #ff6b5b     |
+| Secondary      | #f39c12     |
+| Accent         | #2ecc71     |
+| Dark           | #2c3e50     |
+| Light          | #ecf0f1     |
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone https://github.com//Responsive-Pizza-Website.git
+
+Responsive-Pizza-Website/
+├── index.html            # Main HTML file
+├── css/
+│   ├── style.css         # Main styles
+│   └── swiper-bundle.min.css
+├── js/
+│   ├── main.js           # All JavaScript
+│   └── swiper-bundle.min.js
+├── img/                  # All images
+└── README            # This file
